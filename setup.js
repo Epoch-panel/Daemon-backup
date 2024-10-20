@@ -22,20 +22,14 @@ const db = require('./src/modules/db');
     await db.set('key', key);
     await db.set('panelUrl', panelUrl);
 
-    const l = b === 'Windows_NT' ? '//./pipe/docker_engine' : '/var/run/docker.sock';
+    const l = b === '/var/run/docker.sock';
     const g = { c: l };
     fs.writeFileSync('config.json', JSON.stringify(g, null, 2));
 
-    if (b === 'Linux') {
-        part();
+    if (b !== 'Linux') {
+        console.log(`Unfortunately, Holaclient-E is not yet equipped to support ${b}. Thank you for showing interest on this project, we might support ${b} in te upcoming future`);
+        return;
     }
 
     process.stdin.pause();
 })();
-
-function part() {
-    if (b !== 'Linux') {
-        console.log('Holaclient-E currently supports Linux only.');
-        return;
-    }
-}
