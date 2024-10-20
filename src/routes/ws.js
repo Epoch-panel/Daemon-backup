@@ -1,3 +1,8 @@
+/*
+Genesis - Holaclient-E Daemon
+This code shall not be distributed publicly
+Made by Demon
+*/
 module.exports = async function () {
 app.ws('/ws/:serverId', (ws, req) => {
   

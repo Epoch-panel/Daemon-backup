@@ -1,4 +1,9 @@
-const fs = require('fs');
+/*
+Genesis - Holaclient-E Daemon
+This code shall not be distributed publicly
+Made by Demon
+*/
+/*const fs = require('fs');
 const path = require('path');
 
 function compile(template) {
@@ -115,3 +120,4 @@ module.exports = {
     hydratePage,
     render
 };
+*/

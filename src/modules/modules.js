@@ -1,16 +1,19 @@
-const Keyv = require("keyv");
+/*
+Genesis - Holaclient-E Daemon
+This code shall not be distributed publicly
+Made by Demon
+*/
 global.fs = require('fs');
-global.db = new Keyv('sqlite://database.sqlite');
+global.db = require('./db')
 global.path = require('path');
 global.app = require('./server.js')();
-global.Docker = require('dockerode');
-global.docker = new Docker({ socketPath: '/var/run/docker.sock' });
+global.docker = require('./docker');
 global.config = require('../config.json');
 global.WebSocket = require('ws');
 global.wss = require('ws');
-global.synapse = require('./synapse.js')
-global.bodyParser = require('body-parser')
+global.parser = require('./parser')
 const { exec } = require('child_process');
 global.exec = exec;
 const { Server } = require('ssh2');
 global.Server = Server
+global.utils = require('./utils.js')

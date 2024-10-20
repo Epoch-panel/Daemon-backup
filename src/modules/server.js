@@ -1,3 +1,8 @@
+/*
+Genesis - Holaclient-E Daemon
+This code shall not be distributed publicly
+Made by Demon
+*/
 const http = require('http');
 const WebSocket = require('ws');
 

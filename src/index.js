@@ -27,10 +27,8 @@ app.use(bodyParser.json());
       }
     }
   }
-  const routesPath = path.resolve(__dirname, 'routes');
-  console.log(`Loading modules from: ${routesPath}`);
-  await load(routesPath);
-  console.log('All modules loaded successfully.');
+  const r = path.resolve(__dirname, 'routes');
+  await load(r);
 })();
 
 
@@ -180,12 +178,12 @@ async function k() {
       }
 
       const g = f.disk;
-      const stats = await container.stats();
+      const stats = await l.stats();
       const h = stats.storage_stats.usage;
 
       if (h > g) {
-        await container.stop();
-        await container.remove();
+        await l.stop();
+        await l.remove();
       }
     }
   } catch (err) {

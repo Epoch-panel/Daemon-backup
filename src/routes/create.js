@@ -1,3 +1,8 @@
+/*
+Genesis - Holaclient-E Daemon
+This code shall not be distributed publicly
+Made by Demon
+*/
 module.exports = async function () {
     app.post('/servers/create', async (req, res) => {
         try {

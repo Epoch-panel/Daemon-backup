@@ -1,3 +1,8 @@
+/*
+Genesis - Holaclient-E Daemon
+This code shall not be distributed publicly
+Made by Demon
+*/
 module.exports = async function () {
 app.get('/servers/resize', async (req, res) => {
     const b = req.headers['authorization'];

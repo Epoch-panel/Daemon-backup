@@ -1,11 +1,5 @@
 {
   "dependencies": {
-    "@keyv/sqlite": "^3.6.7",
-    "dockerode": "^4.0.2",
-    "express": "^4.19.2",
-    "figlet": "^1.7.0",
-    "keyv": "^4.5.4",
-    "node-fetch": "^2.7.0",
     "ssh2": "^1.15.0",
     "ws": "^8.16.0"
   },
@@ -19,5 +13,5 @@
     "setup": "node setup.js"
   },
   "author": "Demon",
-  "license": "MIT"
+  "license": "Hola-License"
 }
