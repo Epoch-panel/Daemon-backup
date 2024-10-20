@@ -4,7 +4,7 @@ This code shall not be distributed publicly
 Made by Demon
 */
 module.exports = async function () {
-    app.post('/servers/create', async (req, res) => {
+    app.post('/servers/create', utils.auth, async (req, res) => {
         try {
             const { image, installImage, env, ram, cpu, disk, password, sftpId, port, serverId, startup, install } = req.body;
 

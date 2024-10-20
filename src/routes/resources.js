@@ -4,15 +4,7 @@ This code shall not be distributed publicly
 Made by Demon
 */
 module.exports = async function () {
-    app.post('/servers/resources', async (req, res) => {
-        const b = req.headers['authorization'];
-        if (!b) {
-            return res.status(401).send('Fuck off.');
-        }
-        const c = await db.get('key');
-        if (b !== c) {
-            return res.status(403).send('Fuck off.');
-        }
+    app.post('/servers/resources', utils.auth, async (req, res) => {
         try {
             const serverId = req.body.serverId;
             const container = docker.getContainer(serverId);

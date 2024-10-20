@@ -4,16 +4,8 @@ This code shall not be distributed publicly
 Made by Demon
 */
 module.exports = async function () {
-    app.post('/api/files/', async (req, res) => {
+    app.post('/api/files/', utils.auth, async (req, res) => {
         try {
-            const b = req.headers['authorization'];
-            if (!b) {
-                return res.status(401).send('Fuck off.');
-            }
-            const c = await db.get('key');
-            if (b !== c) {
-                return res.status(403).send('Fuck off.');
-            }
             const serverId = req.body.serverId;
             const a = req.body.path;
             const d = path.resolve('/home', 'servers', serverId);

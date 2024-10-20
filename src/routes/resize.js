@@ -4,15 +4,7 @@ This code shall not be distributed publicly
 Made by Demon
 */
 module.exports = async function () {
-app.get('/servers/resize', async (req, res) => {
-    const b = req.headers['authorization'];
-    if (!b) {
-        return res.status(401).send('Fuck off.');
-    }
-    const c = await db.get('key');
-    if (b !== c) {
-        return res.status(403).send('Fuck off.');
-    }
+app.get('/servers/resize', utils.auth, async (req, res) => {
     const d = path.resolve('/home', 'servers', serverId);
     const serverId = req.body.serverId;
     const container = docker.getContainer(serverId);
